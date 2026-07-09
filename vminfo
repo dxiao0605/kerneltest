@@ -1,1 +1,15 @@
 
+1.	[root@TaifonLab ~]# date
+2.	[root@TaifonLab ~]# lsblk -f
+3.	[root@TaifonLab ~]# du -sh /* 2>/dev/null | sort -hr
+4.	[root@TaifonLab ~]# virsh list --all
+5. [root@TaifonLab ~]# for vm in $(virsh list --all --name); do 
+>     echo "=== VM: $vm ==="; 
+>     virsh domblklist "$vm" --details; 
+> done
+
+6.	[root@TaifonLab ~]# du -sh /data/kvm/vm-images/
+7.	[root@TaifonLab ~]# ip -br a
+8.	[root@TaifonLab ~]# brctl show 2>/dev/null || ip link show type bridge
+9.	[root@TaifonLab ~]# ovs-vsctl show 2>/dev/null
+10.	[root@TaifonLab ~]# nmcli connection show
