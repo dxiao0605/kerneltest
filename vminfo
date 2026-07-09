@@ -13,3 +13,10 @@
 8.	[root@TaifonLab ~]# brctl show 2>/dev/null || ip link show type bridge
 9.	[root@TaifonLab ~]# ovs-vsctl show 2>/dev/null
 10.	[root@TaifonLab ~]# nmcli connection show
+
+
+替代命令
+ip -br address show
+ip -br link show
+ip link show type bridge
+ls -l /etc/sysconfig/network-scripts/ifcfg-*
