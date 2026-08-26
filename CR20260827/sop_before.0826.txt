@@ -1,0 +1,119 @@
+#####before
+
+2 Create CR folder 
+#mkdir -p /home/apuser/temp/CR/CR526675/
+
+
+cd /home/apuser/temp/CR/CR526675/
+
+3 Backup ipset
+# ipset save > /home/apuser/temp/CR/CR526675/ipset-save.conf.20260818.before
+
+# ipset list > /home/apuser/temp/CR/CR526675/ipset-list.conf.20260818.before
+
+#cp /etc/ipset.conf /home/apuser/temp/CR/CR526675/ipset.conf.20260818.before
+
+##Staging 先不做
+#ipset save > /etc/ipset.conf
+
+4 Backup ip route table
+
+
+##如果不存在 不用copy
+#cp /etc/sysconfig/network-scripts/route-eth0 /home/apuser/temp/CR/CR526675/route-eth0.20260818.before
+
+#ip route show > /home/apuser/temp/CR/CR526675/ip-route-show.20260818.before
+
+#ip addr > /home/apuser/temp/CR/CR526675/ip-addr.20260818.before
+
+
+5 Backup ip tables
+
+# iptables-save > /home/apuser/temp/CR/CR526675/iptables.save.20260818.before
+
+# iptables -S > /home/apuser/temp/CR/CR526675/iptables.S.20260818.before
+
+#cp /etc/sysconfig/iptables /home/apuser/temp/CR/CR526675/iptables.20260818.before
+
+##Staging 先不做
+#iptables-save > /etc/sysconfig/iptables
+
+6 Backup process list
+
+#ps -ef >/home/apuser/temp/CR/CR526675/ps-all.20260818.before
+
+# 只篩選 command line 中包含 jinny 的 process
+#ps -eo user=,args= | awk '
+BEGIN { OFS="," }
+
+$0 ~ /jinny/ {
+  owner = $1
+  proc  = ""
+
+   for (i=2; i<=NF; i++) {
+    if ($i ~ /\.sh$/) {
+      n = split($i, a, "/")
+      proc = a[n]
+    }
+  }
+
+   if (proc == "") {
+    n = split($2, a, "/")
+    proc = a[n]
+  }
+
+    gsub(/:$/, "", proc)
+
+  
+  if (proc ~ /\]/ || proc == "" || proc == ".sh")
+    next
+
+  key = proc OFS owner
+  count[key]++
+}
+
+END {
+  for (k in count)
+    print k, count[k]
+}
+' | sort -t, -k1,1 -k2,2 > /home/apuser/temp/CR/CR526675/ps-jinny.20260818.before
+
+##抓所有process 同時正規化
+#ps -eo user=,args= | awk '
+BEGIN { OFS="," }
+
+{
+  owner = $1
+  proc  = ""
+
+  
+  for (i=2; i<=NF; i++) {
+    if ($i ~ /\.sh$/) {
+      n = split($i, a, "/")
+      proc = a[n]
+    }
+  }
+
+  if (proc == "") {
+    n = split($2, a, "/")
+    proc = a[n]
+  }
+
+ 
+  gsub(/:$/, "", proc)
+
+   if (proc ~ /\]/ || proc == "" || proc == ".sh")
+    next
+
+  key = proc OFS owner
+  count[key]++
+}
+
+END {
+  for (k in count)
+    print k, count[k]
+}
+' | sort -t, -k1,1 -k2,2  > /home/apuser/temp/CR/CR526675/ps-all-formale.20260818.before
+
+7 Backup Service  list
+#systemctl list-units --type=service --al

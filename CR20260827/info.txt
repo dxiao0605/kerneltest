@@ -1,1 +1,8 @@
+###8/27 CR 525129確認.
 
+
+MMS-SIU01P            / MMS-DL360-1
+MMS-REU02P            / MMS-DL360-6
+MMS-WAPGW01P          / MMS-DL360-4 
+MMS-DSC01P            / MMS-DL360-4 
+MMS-MTA01P            / MMS-DL360-8 
