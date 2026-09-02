@@ -1,1 +1,17 @@
+9/3 CR527904 for 配合 TD03PCC 需 integration MMS 的需求，設定 MMSC WAP Gateway
 
+
+
+1.主機防火牆(ipset)設定變更
+2.設定IP路由 
+3.新增定義freeradius clients
+
+
+
+
+　	Radius Client
+	
+profile name	address: 210.241.199.199
+profile name	ID	IP	share key	port
+		(gi-address-range)		
+TD03PCC	TD03PCC	172.23.221.242/32	fet	1813
