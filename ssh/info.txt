@@ -1,1 +1,24 @@
 
+於排程主機執行：
+# ssh-keygen -t ed25519
+一路按 Enter 即可。
+產生：
+/.ssh/id_ed25519.pub
+
+
+# ssh-copy-id user@server
+# ssh user@server
+SSH
+sshpass -p password ssh user@server
+改
+ssh user@server
+
+SCP
+sshpass -p password scp file.txt user@server:/tmp
+改
+scp file.txt user@server:/tmp
+
+SFTP
+sshpass -e sftp user@server
+改
+sftp user@server
