@@ -1,1 +1,67 @@
 9/10 CR 528003
+
+
+MMS-LB	mms_gui_adm	"sysadm
+f64729"	"jinny
+86879739"	https://10.76.129.141/mmsadm/
+MMS-REU	reu_gui_adm	"sysadm
+f64729"	"jinny
+86879739"	https://10.76.129.146/reu/
+MMS-DSC01P	dsc_gui_adm	"sysadm
+fetadmin"	"jinny
+Observer123"	https://10.76.129.142/dsc/
+MMS-DSC02P	dsc_gui_adm	"sysadm
+fetadmin"	"jinny
+Observer123"	https://10.76.129.143/dsc/
+MMS-EMS	ems_gui_adm	"sysadm
+f64729"	"ot22ospwc.
+86879739"	https://10.76.129.149/cm/
+grafana	grafana			https://10.76.129.149:3000/
+MMS-BRS	brs_gui	"admin
+stevenc2
+clementh
+sysadm
+tmlu
+roberty2
+
+
+"	"ot22ospwc.
+
+
+jinny
+?:P).lo9
+
+
+
+
+
+
+
+"	https://10.76.129.152/
+MMS-LB_Staging	mms_gui_adm	"sysadm
+f64729"	"jinny
+f64729"	https://10.76.129.114/mmsadm/
+MMS-REU_Staging	reu_gui_adm	"sysadm
+f64729"	"jinny
+f64729"	https://10.76.129.116/mmsadm/
+MMS-DSC_Staging	dsc_gui_adm	"sysadm
+fetadmin"	"jinny
+Observer123"	https://10.76.129.117/dsc/
+MMS-EMS_Staging	ems_gui_adm	"sysadm
+f64729"	"ot22ospwc.
+F64729"	https://10.76.129.118/cm/
+grafana_Staging	grafana			https://10.76.129.118:3000/
+MMS-DL360-1	iLO	Administrator	G6HVBL5B	https://10.76.129.153/
+MMS-DL360-2	iLO	Administrator	2875LWZW	https://10.76.129.155/
+MMS-DL360-3	iLO	Administrator	7QVNX5TK	https://10.76.129.157/
+MMS-DL360-4	iLO	Administrator	8FBDZXN7	https://10.76.129.159/
+MMS-DL360-5	iLO	Administrator	QZW7NTSF	https://10.76.129.161/
+MMS-DL360-6	iLO	Administrator	HH86LHYF	https://10.76.129.163/
+MMS-DL360-7_(testbed)	iLO	Administrator	B57DR7FP	https://10.76.129.110/
+MMS-DL360-8_(MTA)	iLO	Administrator	8J56YBYV	https://10.76.156.153/
+MMS-DL360-9_(MTA)	iLO	Administrator	LQNYLNM7	https://10.76.156.155/
+MMS-DL380-10_(MTA testbed)	iLO	Administrator	B57DR7FP	https://10.76.156.158/
+MMS-MSA_storage_2060	External_Storage	systex	Systex!23	"https://10.76.129.106/
+https://10.76.129.107/"
+MMS-MSA_storage_2062	External_Storage	systex	Systex!23	"https://10.76.129.108/
+https://10.76.129.109/"
