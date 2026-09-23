@@ -1,1 +1,171 @@
+Hi David,
+
+We have developed multiple recipients (mm7 to mm1, mm4) tools for customer to use. 
+
+Copy these files attached to  previous directory 
+
+Usage: ./mm7.sh -o <sender> -r <recipient> [-r <recipient> ...] -p <vaspid> \
+                -v <vasid> -u <url> -s <subject> \
+                -B <basic_authentication>
+
+Options
+-o : Sender of the message
+-r : Recipient of the message (can be given multiple times for multiple recipients)
+-p : VAS Provider
+-v : VAS ID
+-u : MM7 URL
+-s : MMS subject
+-B : Optional Basic Authentication header
+
+Example
+./mm7.sh -o 353123456 -r 353123457 -r 353123458 -p test -v test \
+         -u http://192.168.1.233/mm7/mm7tomms_x.fcgi.sh \
+         -s test
+
+
+Rusdan
+
+From: Ahmad Rusdan 
+Sent: Friday, 17 July, 2026 2:14 PM
+To: 'David Hsiao-蕭偉儒-泰鋒電腦-網通暨數位應用整合業務處A' <david_hsiao@taifon.com.tw>; EN - Support APAC <Support.APAC@enghouse.com>
+Cc: Terry Yuan-袁俊強-泰鋒電腦-網通暨數位應用整合業務處A <terryyuan@taifon.com.tw>; edwardliu <edwardliu@taifon.com.tw>; KY Lai-賴冠元-泰鋒電腦-網通暨數位應用整合業務處A <kylai@taifon.com.tw>; shslee@fareastone.com.tw; tmlu <tmlu@fareastone.com.tw>
+Subject: RE: RQST805149 RE: Inquiry Regarding MM7 and MTA SDK Availability
+
+
+Hi David,
+
+Attached is the tool for MM7 to MM1 and MM4. This is only for single recipient. We do not have the tool for multiple recipients.
+
+Below are the steps .
+
+1.	Create directory mm7tool under /home/jinny/mms/   on mmsc server
+#cd /home/jinny/mms/
+#mkdir mm7tool
+#chown -R jinny:jinny mm7tool
+#chmod -755 mm7tool
+2.	Copy all the files attached in mm7tool
+3.	cd mm7tool
+4.	chmod -755 *
+
+Usage
+
+./mm7.sh -h
+
+Usage: ./mm7.sh -o <sender> -r <recipient> -p <vaspid> \
+                -v <vasid> -u <url> -s <subject> \
+                -B <basic_authentication>
+
+Options:
+-o : Sender of the message
+-r : Recipient of the message
+-p : VAS Provider
+-v : VAS ID
+-u : MM7 URL
+-s : MMS subject
+-B : Optional Basic Authentication header
+
+Example:
+./mm7.sh -o 353123456 -r 353123457 -p test -v test \
+         -u http://<mmsc ip>/mm7/mm7tomms_x.fcgi.sh \
+         -s test
+
+Rusdan
+From: David Hsiao-蕭偉儒-泰鋒電腦-網通暨數位應用整合業務處A <david_hsiao@taifon.com.tw> 
+Sent: Monday, 29 June, 2026 10:49 AM
+To: Ahmad Rusdan <Ahmad.Rusdan@enghouse.com>; EN - Support APAC <Support.APAC@enghouse.com>
+Cc: Terry Yuan-袁俊強-泰鋒電腦-網通暨數位應用整合業務處A <terryyuan@taifon.com.tw>; edwardliu <edwardliu@taifon.com.tw>; KY Lai-賴冠元-泰鋒電腦-網通暨數位應用整合業務處A <kylai@taifon.com.tw>; shslee@fareastone.com.tw; tmlu <tmlu@fareastone.com.tw>
+Subject: RE: RQST805149 RE: Inquiry Regarding MM7 and MTA SDK Availability
+
+Dear Rusdan
+
+Could you please provide an example of Enghouse's XML sending method.
+
+
+David Hsiao 蕭偉儒
+Mobile: +886-973291018
+eMail: david_hsiao@taifon.com.tw
+TAIFON Computer Co., LTD
+www.taifon.com.tw
+
+From: Ahmad Rusdan <Ahmad.Rusdan@enghouse.com> 
+Sent: Friday, June 26, 2026 9:46 AM
+To: David Hsiao-蕭偉儒-泰鋒電腦-網通暨數位應用整合業務處A <david_hsiao@taifon.com.tw>; EN - Support APAC <Support.APAC@enghouse.com>
+Cc: Terry Yuan-袁俊強-泰鋒電腦-網通暨數位應用整合業務處A <terryyuan@taifon.com.tw>; Edward Liu-劉浩岳-泰鋒電腦-網通暨數位應用整合業務處A <edwardliu@taifon.com.tw>; KY Lai-賴冠元-泰鋒電腦-網通暨數位應用整合業務處A <kylai@taifon.com.tw>; shslee@fareastone.com.tw; tmlu <tmlu@fareastone.com.tw>
+Subject: RE: RQST805149 RE: Inquiry Regarding MM7 and MTA SDK Availability
+
+Hi David,
+
+For the tools we have local PDU to test internally these flows. You need to configure the A and B party numbers and perform curl/get command on the listening mms fcgi either on your local or remote node. 
+
+As mentioned above we use this PDU basically in XML format to test the MMS flow as we don’t use java library to send MM7 requests.
+
+Rusdan
+
+From: David Hsiao-蕭偉儒-泰鋒電腦-網通暨數位應用整合業務處A <david_hsiao@taifon.com.tw> 
+Sent: Thursday, 18 June, 2026 4:22 PM
+To: Ahmad Rusdan <Ahmad.Rusdan@enghouse.com>; EN - Support APAC <Support.APAC@enghouse.com>
+Cc: Terry Yuan-袁俊強-泰鋒電腦-網通暨數位應用整合業務處A <terryyuan@taifon.com.tw>; edwardliu <edwardliu@taifon.com.tw>; KY Lai-賴冠元-泰鋒電腦-網通暨數位應用整合業務處A <kylai@taifon.com.tw>; shslee@fareastone.com.tw; tmlu <tmlu@fareastone.com.tw>
+Subject: RE: RQST805149 RE: Inquiry Regarding MM7 and MTA SDK Availability
+
+Dear Rusdan
+
+•  "How do you test MM7 in Enghouse?" 
+•  "FarEasTone (FET) uses a Java library to send MM7 requests. Do you have a similar tool?"
+•  "Also, do you have any tools to test MM4 in MTA?"
+
+private MultiMediaMessage generateMessage()
+    {
+      /**
+       * Create a Multi Media Message
+       */
+      MultiMediaMessage msg = new MultiMediaMessage();
+       msg.setAllowSenderVisibility(true);
+      msg.setDeliveryReport(true);
+      msg.setReadReport(false);
+      msg.addDestinationTO("+886936105564/TYPE=PLMN");
+      msg.addDestinationTO("+886989444373/TYPE=PLMN");
+      msg.setRelativeTimeofExpiry(60*60);
+      msg.setPriority(Priority.NORMAL);
+      msg.setMessageClass(MessageClass.PERSONAL);
+
+      msg.setFrom("+886989444373/TYPE=PLMN");
+      msg.setSubject("MMS Test");
+      return msg;
+    }
+
+
+David Hsiao 蕭偉儒
+Mobile: +886-973291018
+eMail: david_hsiao@taifon.com.tw
+TAIFON Computer Co., LTD
+www.taifon.com.tw
+
+From: Ahmad Rusdan <Ahmad.Rusdan@enghouse.com> 
+Sent: Monday, June 15, 2026 9:01 AM
+To: David Hsiao-蕭偉儒-泰鋒電腦-網通暨數位應用整合業務處A <david_hsiao@taifon.com.tw>; EN - Support APAC <Support.APAC@enghouse.com>
+Cc: Terry Yuan-袁俊強-泰鋒電腦-網通暨數位應用整合業務處A <terryyuan@taifon.com.tw>; Edward Liu-劉浩岳-泰鋒電腦-網通暨數位應用整合業務處A <edwardliu@taifon.com.tw>; KY Lai-賴冠元-泰鋒電腦-網通暨數位應用整合業務處A <kylai@taifon.com.tw>; shslee@fareastone.com.tw; tmlu <tmlu@fareastone.com.tw>
+Subject: RQST805149 RE: Inquiry Regarding MM7 and MTA SDK Availability
+
+Hi David,
+
+We need more detail info on the request. Please also provide sample what customer is trying to have.
+
+Rusdan
+
+From: David Hsiao-蕭偉儒-泰鋒電腦-網通暨數位應用整合業務處A <david_hsiao@taifon.com.tw> 
+Sent: Thursday, 11 June, 2026 1:53 PM
+To: EN - Support APAC <Support.APAC@enghouse.com>
+Cc: Terry Yuan-袁俊強-泰鋒電腦-網通暨數位應用整合業務處A <terryyuan@taifon.com.tw>; edwardliu <edwardliu@taifon.com.tw>; KY Lai-賴冠元-泰鋒電腦-網通暨數位應用整合業務處A <kylai@taifon.com.tw>; shslee@fareastone.com.tw; tmlu <tmlu@fareastone.com.tw>
+Subject: Inquiry Regarding MM7 and MTA SDK Availability
+
+Dear Support
+
+FET would like to inquire whether Enghouse provides SDKs for MM7 and MTA integrations that can be used by external applications to programmatically send MM7 and MM4 requests.
+
+
+David Hsiao 蕭偉儒
+Mobile: +886-973291018
+eMail: david_hsiao@taifon.com.tw
+TAIFON Computer Co., LTD
+www.taifon.com.tw
 
