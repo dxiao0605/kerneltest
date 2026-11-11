@@ -1,1 +1,7 @@
+1.	Backup current mdel binary.
+2.	Place new mdel binary to /data/jinny/temp
+3.	Stop mdel process  “ systemctl stop mdel”
+4.	Copy/replace  new mdel binary to current mdel 
+5.	Start mdel process “systemctl start mdel”
+6.	Restest 
 
